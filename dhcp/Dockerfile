@@ -1,16 +1,16 @@
+# Usando a imagem base Ubuntu
 FROM ubuntu:latest
 
 # Atualizando o repositório e instalando o servidor DHCP
-RUN apt-get update && apt-get install -y isc-dhcp-server
+RUN apt-get update && apt-get install -y isc-dhcp-server net-tools
 
-# Copiando o arquivo de configuração do DHCP para dentro do container
-COPY  isc-dhcp-server /etc/default/isc-dhcp-server
-COPY /dhcp/dhcpd.conf /etc/dhcp/dhcpd.conf
-COPY /dhcpd.leases /var/lib/dhcp
-COPY dhclient.conf /etc/dhcp/dhclient.conf
+# Copiando os arquivos de configuração do DHCP para dentro do container
+COPY isc-dhcp-server /etc/default/isc-dhcp-server
+COPY dhcpd.conf /etc/dhcp/dhcpd.conf
+COPY dhcpd.leases /var/lib/dhcp/dhcpd.leases
+
 # Expondo a porta usada pelo servidor DHCP
-#RUN apt-get install apt-utils
-#RUN /etc/init.d/isc-dhcp-server restart
-RUN apt install net-tools -y
+EXPOSE 67/udp
+
 # Comando para iniciar o servidor DHCP
 CMD ["dhcpd", "-f", "-d", "--no-pid"]
