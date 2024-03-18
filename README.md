@@ -1,5 +1,21 @@
 # Documentação trabalho de Serviços de Redes de Computadores
 
+- Algumas das configurações:
+
+- 
+A partir do código fornecido foram feitas algumas modificações e foi inserido um código cujo nome: **dhcpd.conf** : 
+
+O código foi usado para fazer teste com IP e conexão entre os dois containers para garantir a conexão entre as máquinas.
+
+```
+subnet 192.168.0.0 netmask 255.255.255.0 {
+  range 192.168.0.100 192.168.0.200;
+  option routers 192.168.0.1;
+  option domain-name-servers 8.8.8.8;
+  option domain-name "maria.com";
+}
+```
+
 ## 1 - Introdução
 
 A fim de realizar o projeto foi utilizado a ferramenta Docker, com intuito de criar e implementar os serviços de **DHCPD, DNS e Firewall*** . O Docker é uma ferramenta que ajuda na criação de contêineres. Os contêineres garantem isolamento dos serviços, tornando a implantação mais eficiente e organizada para o desenvolvedor. A seguir temos as especificações de cada serviço:
@@ -11,6 +27,10 @@ A fim de realizar o projeto foi utilizado a ferramenta Docker, com intuito de cr
 - **DNS**:
   O DNS é fundamental para a navegação na web e para a comunicação em redes, pois permite que usemos nomes de domínio amigáveis em vez de memorizar endereços IP complexos.
   Nesse caso iremos implantar um servidor DNS para resolver nomes de domínio dentro da rede.
+
+- **Firewall**
+
+  Pode ser usado para permitir ou bloquear o tráfego com base em várias regras e políticas de segurança. Com ele é possível controlar o tráfego de entrada e saída, permitindo apenas o acesso aos serviços necessários e bloqueando tentativas de acesso malicioso
 
 ## 2 - Testes
 
