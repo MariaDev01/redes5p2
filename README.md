@@ -119,4 +119,7 @@ A fim de realizar o projeto foi utilizado a ferramenta Docker, com intuito de cr
 
   ![Captura de tela de 2024-03-18 00-08-46](https://github.com/MariaDev01/redes5p2/assets/116850515/bcc134ef-d5e1-44a4-937f-1f6278c71878)
 
-  
+
+
+E assim foram executados e testados todos os comandos .
+
