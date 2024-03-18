@@ -14,7 +14,10 @@ A fim de realizar o projeto foi utilizado a ferramenta Docker, com intuito de cr
 
 ## 2 - Testes
 
-2.1 Teste com Dhcpd:
+2.1 Teste com Dhcp:
+
+![Captura de tela de 2024-03-17 23-34-09](https://github.com/MariaDev01/redes5p2/assets/116850515/c373db7c-661c-4ce9-a5d0-199280ffa976)
+
 
 
 
