@@ -1,13 +1,10 @@
-# Dockerfile para servidor DNS
-
-# Usando a imagem base Ubuntu
 FROM ubuntu:latest
 
 # Atualizando o repositório e instalando o servidor DNS BIND9
 RUN apt-get update && apt-get install -y bind9
 
 # Copiando o arquivo de configuração do DNS para dentro do container
-COPY named.conf /etc/bind/named.conf.options
+COPY named.conf /etc/bind/named.conf
 
 # Expondo a porta usada pelo servidor DNS
 EXPOSE 53/tcp
